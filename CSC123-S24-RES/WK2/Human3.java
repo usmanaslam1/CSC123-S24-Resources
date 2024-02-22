@@ -2,7 +2,7 @@
 //Currently, nothing to import
 
 // Class declaration
-public class Human { //public class, called Human
+public class Human3 { //public class, called Human
 
 	//Instance fields
 	private String firstName;
@@ -14,13 +14,16 @@ public class Human { //public class, called Human
 	
 	//Constructor
 	
-	public Human(String fName, String lName, String hColor, String eColor) {
+	public Human3(String fName, String lName, String hColor, String eColor) {
 		firstName=fName;
 		lastName=lName;
 		hairColor=hColor;
 		eyeColor=eColor;
 		
 	}
+	
+	
+
 	
 	//Setter Methods
 	public void setFirstName(String fName) {
@@ -75,11 +78,19 @@ public class Human { //public class, called Human
 	}
 	
 	
-	public boolean equals(Human2 h) {
+	public boolean equals(Human h) {
 			return getFirstName().equals(h.getFirstName()) && getLastName().equals(h.getLastName()) 
 					&& eyeColor.equals(h.getEyeColor()) && hairColor.equals(h.getHairColor())
 					&& heightInFeet==h.getHeightInFeet() && heightInInches==h.getHeightInInches();
 	}
+	
+	public Human3 createCopy() {
+		Human3 h=new Human3(firstName, lastName, hairColor, eyeColor);
+		h.setHeightInFeet(heightInFeet);
+		h.setHeightInInches(heightInInches);
+		return h;
+		
+    }
 	
 	
 	//public String toString() {

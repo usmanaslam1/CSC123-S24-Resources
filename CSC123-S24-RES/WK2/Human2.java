@@ -2,7 +2,7 @@
 //Currently, nothing to import
 
 // Class declaration
-public class Human { //public class, called Human
+public class Human2 { //public class, called Human
 
 	//Instance fields
 	private String firstName;
@@ -14,17 +14,27 @@ public class Human { //public class, called Human
 	
 	//Constructor
 	
-	public Human(String fName, String lName, String hColor, String eColor) {
-		firstName=fName;
-		lastName=lName;
-		hairColor=hColor;
-		eyeColor=eColor;
+	public Human2(String firstName, String lastName, String hairColor, String eyeColor) {
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.hairColor=hairColor;
+		this.eyeColor=eyeColor;
 		
+	}
+	
+	public Human2(Human2 h) {
+		firstName = h.getFirstName();
+		lastName = h.getLastName();
+		hairColor = h.getHairColor();
+		eyeColor = h.getEyeColor();
+		heightInFeet = h.getHeightInFeet();
+		heightInInches = h.getHeightInInches();
 	}
 	
 	//Setter Methods
 	public void setFirstName(String fName) {
-		firstName=fName;
+		String firstName="My Name";
+		System.out.println(this.firstName);
 	}
 	public void setLastName(String lName) {
 		lastName=lName;
@@ -75,7 +85,7 @@ public class Human { //public class, called Human
 	}
 	
 	
-	public boolean equals(Human2 h) {
+	public boolean equals(Human h) {
 			return getFirstName().equals(h.getFirstName()) && getLastName().equals(h.getLastName()) 
 					&& eyeColor.equals(h.getEyeColor()) && hairColor.equals(h.getHairColor())
 					&& heightInFeet==h.getHeightInFeet() && heightInInches==h.getHeightInInches();
