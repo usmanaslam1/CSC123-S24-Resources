@@ -78,7 +78,12 @@ public class Human3 { //public class, called Human
 	}
 	
 	
-	public boolean equals(Human h) {
+	public boolean equals(Object o) {
+			if(o==null) {
+				return false;
+			}
+			
+			Human3 h=(Human3)o;
 			return getFirstName().equals(h.getFirstName()) && getLastName().equals(h.getLastName()) 
 					&& eyeColor.equals(h.getEyeColor()) && hairColor.equals(h.getHairColor())
 					&& heightInFeet==h.getHeightInFeet() && heightInInches==h.getHeightInInches();
@@ -96,10 +101,6 @@ public class Human3 { //public class, called Human
 	//public String toString() {
 	//	return getFirstName()+":" +  getLastName() + ":" + getEyeColor()+":"+ getHairColor();
 	//}
-	
-	
-	
-	
-	
+
 	
 }
