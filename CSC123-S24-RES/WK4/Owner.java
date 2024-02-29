@@ -4,6 +4,7 @@
 // Class declaration
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Owner { //public class, called Human
 
@@ -24,8 +25,14 @@ public class Owner { //public class, called Human
     //Setter Methods	
 	
 	public void addCar(Car c) {
-		cars.add(c);
-		c.setOwner(this);
+		if(!cars.contains(c)) {
+			cars.add(c);
+        }
+		
+		if (c.getOwner()== null ||!c.getOwner().equals(this)) {
+			c.setOwner(this);
+		}
+
 	}
 	
 	public void listCars() {
@@ -55,6 +62,24 @@ public class Owner { //public class, called Human
 	
 	public String toString() {
 		return "First Name: " + firstName + ", Last Name: " + lastName;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cars, firstName, lastName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Owner other = (Owner) obj;
+		return Objects.equals(cars, other.cars) && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(lastName, other.lastName);
 	}
 	
 }
