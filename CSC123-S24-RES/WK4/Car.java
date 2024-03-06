@@ -89,18 +89,7 @@ public class Car {
 	}
 
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Car other = (Car) obj;
-		return Objects.equals(color, other.color) && Objects.equals(make, other.make)
-				&& Objects.equals(model, other.model) && Objects.equals(owner, other.owner);
-	}
+	
 	
 	
 
