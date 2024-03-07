@@ -14,11 +14,14 @@ public class Human { //public class, called Human
 	
 	//Constructor
 	
-	public Human(String fName, String lName, String hColor, String eColor) {
+	public Human(String fName, String lName, String hColor, String eColor) throws EyeColorMissingException {
 		firstName=fName;
 		lastName=lName;
 		hairColor=hColor;
 		eyeColor=eColor;
+		if (eColor == null||eColor.isEmpty()) {
+			throw new EyeColorMissingException("Eye color is missing");
+		}
 		
 	}
 	
