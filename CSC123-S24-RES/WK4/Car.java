@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * This is the Car class. It has a make, model, color, and owner.
  */
 
-public class Car {
+public class Car implements Serializable{
 	
 	/**
 	 * This represents make of the car. This is useless because it is a private field

@@ -3,10 +3,11 @@
 
 // Class declaration
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Owner { //public class, called Human
+public class Owner implements Serializable{ //public class, called Human
 
 	//Instance fields
 	private String firstName;
