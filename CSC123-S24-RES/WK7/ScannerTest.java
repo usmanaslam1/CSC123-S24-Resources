@@ -7,7 +7,7 @@ public class ScannerTest {
 		
 		File f=new File("/Users/usman/test123/file.txt");
 		
-		MyScanner sc=new MyScanner(f);
+		MyNewScanner sc=new MyNewScanner(f);
 		
 		System.out.println(sc.nextLine());
 		System.out.println(sc.nextLine());

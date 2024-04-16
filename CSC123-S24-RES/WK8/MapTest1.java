@@ -3,6 +3,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.text.CollationElementIterator;
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ public class MapTest1 {
 		
 		//Create map to store information about a car
 		
-		Map<String, String> car= new HashMap<String, String>();
+		Map<String, String> car= new TreeMap<String, String>();
 		
 		//add information to the map
 		car.put("Make", "Toyota");
@@ -55,7 +56,7 @@ public class MapTest1 {
 //		}
 		
 		
-		Collection<String> values = car.values();
+		Set<String> values = car.keySet();
 		
 		for (String value : values) {
 			System.out.println(value);
