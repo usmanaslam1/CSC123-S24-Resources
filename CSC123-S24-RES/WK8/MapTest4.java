@@ -6,7 +6,7 @@ import java.util.Set;
 import java.text.CollationElementIterator;
 import java.util.ArrayList;
 
-public class MapTest2 {
+public class MapTest4 {
 	
 
 	public static void main(String[] args) {

@@ -15,6 +15,7 @@
 	<classpathentry kind="src" path="WK7"/>
 	<classpathentry kind="src" path="WK8"/>
 	<classpathentry kind="src" path="WK9"/>
+	<classpathentry kind="src" path="WK10"/>
 	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

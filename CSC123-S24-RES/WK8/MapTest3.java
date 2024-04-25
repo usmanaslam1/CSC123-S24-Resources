@@ -7,7 +7,7 @@ import java.util.TreeMap;
 import java.text.CollationElementIterator;
 import java.util.ArrayList;
 
-public class MapTest1 {
+public class MapTest3 {
 	
 
 	public static void main(String[] args) {
