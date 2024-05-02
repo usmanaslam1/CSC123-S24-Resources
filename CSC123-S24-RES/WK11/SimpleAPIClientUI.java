@@ -4,34 +4,38 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.Scanner;
 
-public class SimpleAPIClient {
+import org.json.simple.JSONObject;
+
+public class SimpleAPIClientUI {
 
 	public static void main(String[] args) throws Exception {
+		
+		
+		System.out.println("Welcome to User Seach Program!!!!");
 
-	
-		// STEP 1 - Use scanner class to ask for Input (customer id)
-		// STEP 2 - Use SimpleJson Library to create a Json document
-		// STEP 3 - Invoke the document on the API given below
+		JSONObject json = new JSONObject();
+		Scanner scanner = new Scanner(System.in);
+		while(true) {
+			System.out.print("\n\nEnter Customer ID to search:");
+			
+			String cust_id = scanner.nextLine();
+			json.put("cust_id", cust_id);
+			json.put("first_name", "John");
+			
+			System.out.println("You typed and I made a JSON:" + json.toJSONString());
+			System.out.println("\n\nCalling API!!!");
+			HttpResponse<String> res = invokeAPI(json.toJSONString());
+			System.out.println("\nHere is your result!!!\n\n");
+			System.out.println(res.body());
+			
+			
+			
+		}
 		
-		
-		// STEP 4 - Print results 
-		
-		
-		String json="{\"cust_id\":\"1000\"}";
-		
-		
-		HttpResponse<String> res = invokeAPI(json);
-		
-		
-		System.out.println(res.statusCode());
-		System.out.println(res.body());
-		System.out.println(res.headers().map());
 	}
 
-	
-	
-	
 	public static HttpResponse invokeAPI(String json) throws Exception {
 
 		// STEP 1 - Build HTTP Request

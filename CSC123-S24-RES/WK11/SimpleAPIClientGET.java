@@ -9,7 +9,7 @@ public class SimpleAPIClientGET {
 
 	public static void main(String[] args) throws Exception {
 		
-		String cityOrZip="New%20York";
+		String cityOrZip="Carson";
 		
 
 		String url="https://weatherapi-com.p.rapidapi.com/current.json"+"?q="+cityOrZip;
@@ -21,9 +21,6 @@ public class SimpleAPIClientGET {
 
 	}
 
-	
-	
-	
 	public static HttpResponse invokeAPI(String url) throws Exception {
 
 		// STEP 1 - Build HTTP Request
