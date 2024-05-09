@@ -6,8 +6,8 @@ public class Currencies {
 	
 	Map<String,MyCurrency> currencies = new HashMap<String, MyCurrency>();
 	
-	public Currencies() {		
-		AbstractCurencyLoader cl=new AbstractCurencyLoader();
+	public Currencies(String loaderType) throws Exception {		
+		AbstractCurencyLoader cl=AbstractCurencyLoader.getInstance(loaderType);
 		currencies=cl.loadCurrencies();
 		
 	}
@@ -15,11 +15,11 @@ public class Currencies {
 	
 
 	public MyCurrency getCurrency(String name) {
-        return currencies.get(name);
+        return currencies.get(name.strip().toUpperCase());
     }
 	
 	public boolean existsCurrency(String name) {
-		return currencies.containsKey(name);
+		return currencies.containsKey(name.strip().toUpperCase());
 	}
 	
 	

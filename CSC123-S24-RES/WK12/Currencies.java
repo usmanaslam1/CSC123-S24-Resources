@@ -26,11 +26,11 @@ public class Currencies {
 	
 
 	public MyCurrency getCurrency(String name) {
-        return currencies.get(name);
+        return currencies.get(name.strip().toUpperCase());
     }
 	
 	public boolean existsCurrency(String name) {
-		return currencies.containsKey(name);
+		return currencies.containsKey(name.strip().toUpperCase());
 	}
 	
 	

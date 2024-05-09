@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CurrencyMain {
 
-	public static final String[] menuOptions = { "Sell Currency%n", "Exit%n" };
+	public static final String[] menuOptions = { "Sell Currency%n","Some other option%n", "Exit%n" };
 
 	public static final String MSG_PROMPT = "%nEnter choice: ";
 
@@ -20,17 +20,19 @@ public class CurrencyMain {
 		this.out = out;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 
 		new CurrencyMain(System.in, System.out).run();
 	}
 
-	Currencies currencyBank = new Currencies();
 
-	public void run() {
+	public void run() throws Exception{
 		UIManager ui = new UIManager(this.in, this.out, menuOptions, MSG_PROMPT);
-		Currencies currencyBank = new Currencies();
+		
+		//ASSIGNMENT 6
+		Currencies currencyBank = new Currencies("string");
 
+		//END ASSIGNMENT 6
 		try {
 			while (true) {
 
@@ -49,7 +51,7 @@ public class CurrencyMain {
 				
 				ui.print(currency, menuOptions);
 
-				ui.print("You will get USD %s %n%n", currencyBank.getCurrency(currency).convertToUSD(amount));
+				ui.print("%nYou will get USD %s %n%n", currencyBank.getCurrency(currency).convertToUSD(amount));
 			}
 		} catch (Exception ignore) {
 		}
