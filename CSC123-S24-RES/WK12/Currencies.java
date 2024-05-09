@@ -5,12 +5,9 @@ public class Currencies {
 	
 	Map<String,MyCurrency> currencies = new HashMap<String, MyCurrency>();
 	
-	public Currencies(ICurrencyLoader loader) {
-		
-		Map<String,Double> currencyMap=loader.loadCurrencies();
-		
-		for (String key : currencyMap.keySet()) {
-			
+	public Currencies(ICurrencyLoader loader) {		
+		Map<String,Double> currencyMap=loader.loadCurrencies();		
+		for (String key : currencyMap.keySet()) {	
 			MyCurrency c = new MyCurrency(key, currencyMap.get(key));
 			this.currencies.put(key.toString(), c);
 		}
@@ -21,6 +18,12 @@ public class Currencies {
 		currencies.put("USD",new MyCurrency("USD", 1.0));
 		currencies.put("CAD", new MyCurrency("USD", .75));
 	}
+	
+	public void printCurrencies(IPrinter printer) {
+		printer.print(this.currencies);
+		
+	}
+	
 
 	public MyCurrency getCurrency(String name) {
         return currencies.get(name);
